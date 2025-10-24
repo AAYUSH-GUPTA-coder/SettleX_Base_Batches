@@ -1,3 +1,6 @@
 [submodule "SmartContract/lib/messaging-contracts-v2"]
 	path = SmartContract/lib/messaging-contracts-v2
 	url = https://github.com/concero/messaging-contracts-v2
+[submodule "SmartContract/lib/openzeppelin-contracts"]
+	path = SmartContract/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
