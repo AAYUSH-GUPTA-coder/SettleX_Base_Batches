@@ -1,0 +1,3 @@
+[submodule "SmartContract/lib/messaging-contracts-v2"]
+	path = SmartContract/lib/messaging-contracts-v2
+	url = https://github.com/concero/messaging-contracts-v2
