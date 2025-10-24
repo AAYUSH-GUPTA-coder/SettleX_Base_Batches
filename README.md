@@ -76,7 +76,7 @@ TokenPool Contract: Manages liquidity and ensures delta settlements are bridged 
 
 ## 📖 Contract Addresses
 
-Hub Contract: (0x7D9f7b6dAA5407bFd4A935aae48c64aa0FE69bcb)(https://sepolia.arbiscan.io/address/0x7D9f7b6dAA5407bFd4A935aae48c64aa0FE69bcb)
+Hub Contract: [0x7D9f7b6dAA5407bFd4A935aae48c64aa0FE69bcb](https://sepolia.arbiscan.io/address/0x7D9f7b6dAA5407bFd4A935aae48c64aa0FE69bcb)
 
 Spoke Contract: [0x91e2E34718EFD173389c7876BBBb57594cE27e37](https://sepolia.basescan.org/address/0x91e2E34718EFD173389c7876BBBb57594cE27e37)
 
