@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: #060606;
+        --foreground: #FFFFFF;
+        --muted: #1E1E23;
+        --muted-foreground: #A3A3A3;
+        --muted-foreground-rgb: 163, 163, 163;
+        --card: #141414;
+        --card-foreground: #FFFFFF;
+        --border: #353535;
+        --input: #232323;
+        --primary: #19C0DE;
+        --primary-foreground: #000000;
+        --secondary: #F3F3F3;
+        --secondary-foreground: #1A1A1A;
+        --accent: #17C1DE;
+        --accent-rgb: 23, 193, 222;
+        --accent-foreground: #FFFFFF;
+        --destructive: #D93636;
+        --destructive-foreground: #FAFAFA;
+        --ring: #D3D3D3;
+        --chart-1: #F28B3B;
+        --chart-2: #2B9E63;
+        --chart-3: #3B5F7E;
+        --chart-4: #B23B7E;
+        --chart-5: #F2B02B;
+        --radius: 0.5rem;
+    }
+}
+
+* {
+    @apply border-border;
+}
+
+body {
+    background-color: var(--background);
+    color: #ffffff;
+    font-family: 'Helvetica Neue', 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Hide arrows in number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
