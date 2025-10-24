@@ -1,0 +1,987 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "hubChainSelector_",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      {
+        "name": "sourceChainSelector_",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      { "name": "hubAddress_", "type": "address", "internalType": "address" },
+      { "name": "owner_", "type": "address", "internalType": "address" },
+      {
+        "name": "conceroRouter_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  { "type": "fallback", "stateMutability": "payable" },
+  { "type": "receive", "stateMutability": "payable" },
+  {
+    "type": "function",
+    "name": "CONCERO_ROUTER",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract IConceroRouter"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "bridgeExtraTokens",
+    "inputs": [
+      { "name": "token_", "type": "uint24", "internalType": "uint24" },
+      {
+        "name": "dstSpokeChainSelector_",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      { "name": "to_", "type": "address", "internalType": "address" },
+      { "name": "amount_", "type": "uint256", "internalType": "uint256" },
+      { "name": "gasLimit_", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [{ "name": "", "type": "bytes", "internalType": "bytes" }],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "bridgeSettlement",
+    "inputs": [
+      { "name": "gasLimit_", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "callTransferDetails",
+    "inputs": [
+      { "name": "gasLimit_", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "checkOriginalToProtocol",
+    "inputs": [
+      {
+        "name": "originalToken_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [{ "name": "", "type": "uint24", "internalType": "uint24" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "checkProtocolToOriginal",
+    "inputs": [
+      {
+        "name": "protocolTokenId_",
+        "type": "uint24",
+        "internalType": "uint24"
+      }
+    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "checkWhitelistAddr",
+    "inputs": [
+      { "name": "addr_", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "conceroReceive",
+    "inputs": [
+      { "name": "messageId", "type": "bytes32", "internalType": "bytes32" },
+      {
+        "name": "srcChainSelector",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      { "name": "sender", "type": "bytes", "internalType": "bytes" },
+      { "name": "message", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "createTransaction",
+    "inputs": [
+      {
+        "name": "transaction_",
+        "type": "tuple",
+        "internalType": "struct Spoke.CrossChainTransfer",
+        "components": [
+          {
+            "name": "sourceChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "destinationChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "protocolTokenId",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "receiver",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getDestinationPoolContract",
+    "inputs": [
+      { "name": "chainSelector_", "type": "uint24", "internalType": "uint24" }
+    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getDestinationSpokeContracts",
+    "inputs": [
+      { "name": "chainSelector_", "type": "uint24", "internalType": "uint24" }
+    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getHubAddress",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getHubChainSelector",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint24", "internalType": "uint24" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getIsApprovedChainSelector",
+    "inputs": [
+      { "name": "chainSelector_", "type": "uint24", "internalType": "uint24" }
+    ],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getIsApprovedSpokeContract",
+    "inputs": [
+      {
+        "name": "spokeContract_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getOwner",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getPoolAddr",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getSourceChainSelector",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint24", "internalType": "uint24" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getStoredTransactionDetails",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple[]",
+        "internalType": "struct Spoke.TransferDetail[]",
+        "components": [
+          {
+            "name": "protocolTokenId",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "sourceChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "destinationChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getStoredTransactionDetailsId",
+    "inputs": [
+      { "name": "id_", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct Spoke.TransferDetail",
+        "components": [
+          {
+            "name": "protocolTokenId",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "sourceChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "destinationChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getStoredTransactionDetailsLength",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getStoredTransactionsData",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple[]",
+        "internalType": "struct Spoke.CrossChainTransfer[]",
+        "components": [
+          {
+            "name": "sourceChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "destinationChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "protocolTokenId",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "receiver",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getStoredTransactionsDataId",
+    "inputs": [
+      { "name": "id_", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct Spoke.CrossChainTransfer",
+        "components": [
+          {
+            "name": "sourceChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "destinationChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "protocolTokenId",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "receiver",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getStoredTransactionsDataLength",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getStoredTransactionsSettlement",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple[]",
+        "internalType": "struct Spoke.CrossChainTransfer[]",
+        "components": [
+          {
+            "name": "sourceChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "destinationChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "protocolTokenId",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "receiver",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getStoredTransactionsSettlementId",
+    "inputs": [
+      { "name": "id_", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct Spoke.CrossChainTransfer",
+        "components": [
+          {
+            "name": "sourceChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "destinationChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "protocolTokenId",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "receiver",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getStoredTransactionsSettlementLength",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "setProtocolToken",
+    "inputs": [
+      {
+        "name": "originalToken_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "protocolTokenId_",
+        "type": "uint24",
+        "internalType": "uint24"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "settlement",
+    "inputs": [
+      {
+        "name": "settlement_",
+        "type": "tuple[]",
+        "internalType": "struct Spoke.CrossChainTransfer[]",
+        "components": [
+          {
+            "name": "sourceChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "destinationChainSelector",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "protocolTokenId",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "receiver",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "transferEth",
+    "inputs": [
+      {
+        "name": "receiver_",
+        "type": "address",
+        "internalType": "address payable"
+      },
+      { "name": "amount_", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateDestinationPoolContract",
+    "inputs": [
+      {
+        "name": "dstChainSelector_",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      {
+        "name": "dstPoolContract_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateDestinationSpokeContracts",
+    "inputs": [
+      {
+        "name": "dstChainSelector_",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      {
+        "name": "dstSpokeContract_",
+        "type": "address",
+        "internalType": "address"
+      },
+      { "name": "contractValue_", "type": "bool", "internalType": "bool" },
+      {
+        "name": "chainSelectorValue_",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateOwner",
+    "inputs": [
+      { "name": "owner_", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updatePoolAddr",
+    "inputs": [
+      { "name": "poolAddr_", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateSourceChainSelector",
+    "inputs": [
+      {
+        "name": "sourceChainSelector_",
+        "type": "uint24",
+        "internalType": "uint24"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateTrustedHubContracts",
+    "inputs": [
+      {
+        "name": "hubChainSelector_",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      { "name": "hubContract_", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateWhitelist",
+    "inputs": [
+      { "name": "addr_", "type": "address", "internalType": "address" },
+      { "name": "status_", "type": "bool", "internalType": "bool" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "CallBridgeExtraTokens",
+    "inputs": [
+      {
+        "name": "destinationSpokeId",
+        "type": "uint24",
+        "indexed": true,
+        "internalType": "uint24"
+      },
+      {
+        "name": "destinationPoolAddr",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "message",
+        "type": "bytes",
+        "indexed": false,
+        "internalType": "bytes"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "CallSettlement",
+    "inputs": [
+      {
+        "name": "destinationChainSelector",
+        "type": "uint24",
+        "indexed": true,
+        "internalType": "uint24"
+      },
+      {
+        "name": "destinationSpokeAddr",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "message",
+        "type": "bytes",
+        "indexed": false,
+        "internalType": "bytes"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "CallTransferDetails",
+    "inputs": [
+      {
+        "name": "hubChainSelector",
+        "type": "uint24",
+        "indexed": true,
+        "internalType": "uint24"
+      },
+      {
+        "name": "hubAddress",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "message",
+        "type": "bytes",
+        "indexed": false,
+        "internalType": "bytes"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OwnerAddressUpdated",
+    "inputs": [
+      {
+        "name": "newOwnerAddress",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "ProtocolToOriginalSet",
+    "inputs": [
+      {
+        "name": "protocolTokenId",
+        "type": "uint24",
+        "indexed": true,
+        "internalType": "uint24"
+      },
+      {
+        "name": "originalToken",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "TransactionAdded",
+    "inputs": [
+      {
+        "name": "sourceChainSelector",
+        "type": "uint24",
+        "indexed": true,
+        "internalType": "uint24"
+      },
+      {
+        "name": "destinationChainSelector",
+        "type": "uint24",
+        "indexed": true,
+        "internalType": "uint24"
+      },
+      {
+        "name": "protocolTokenId",
+        "type": "uint24",
+        "indexed": true,
+        "internalType": "uint24"
+      },
+      {
+        "name": "receiver",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "UpdateDestinationPoolContract",
+    "inputs": [
+      {
+        "name": "destinationchainSelector",
+        "type": "uint24",
+        "indexed": true,
+        "internalType": "uint24"
+      },
+      {
+        "name": "destinationPoolContract",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "UpdateDestinationSpokeContracts",
+    "inputs": [
+      {
+        "name": "destinationchainSelector",
+        "type": "uint24",
+        "indexed": true,
+        "internalType": "uint24"
+      },
+      {
+        "name": "destinationSpokeContract",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "UpdateHubChainSelector",
+    "inputs": [
+      {
+        "name": "hubChainSelector",
+        "type": "uint24",
+        "indexed": true,
+        "internalType": "uint24"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "UpdateHubContract",
+    "inputs": [
+      {
+        "name": "hubContract",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "UpdatePoolAddr",
+    "inputs": [
+      {
+        "name": "poolAddr",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "UpdateSourceChainSelector",
+    "inputs": [
+      {
+        "name": "sourceChainSelector",
+        "type": "uint24",
+        "indexed": true,
+        "internalType": "uint24"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "UpdateWhitelist",
+    "inputs": [
+      {
+        "name": "whitelistAddr",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "status",
+        "type": "bool",
+        "indexed": true,
+        "internalType": "bool"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "DelegateCallFailed",
+    "inputs": [
+      { "name": "response", "type": "bytes", "internalType": "bytes" }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "InsufficientFee",
+    "inputs": [
+      { "name": "provided", "type": "uint256", "internalType": "uint256" },
+      { "name": "required", "type": "uint256", "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "InvalidClientMessageConfig",
+    "inputs": [
+      {
+        "name": "error",
+        "type": "uint8",
+        "internalType": "enum IConceroClientErrors.MessageConfigErrorType"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "InvalidConceroRouter",
+    "inputs": [
+      { "name": "router", "type": "address", "internalType": "address" }
+    ]
+  },
+  { "type": "error", "name": "InvalidDstChainData", "inputs": [] },
+  { "type": "error", "name": "MessageTooLarge", "inputs": [] },
+  {
+    "type": "error",
+    "name": "NotAContract",
+    "inputs": [
+      { "name": "target", "type": "address", "internalType": "address" }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "RequiredVariableUnset",
+    "inputs": [
+      {
+        "name": "variableType",
+        "type": "uint8",
+        "internalType": "enum IConceroClientErrors.RequiredVariableUnsetType"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "SafeERC20FailedOperation",
+    "inputs": [
+      { "name": "token", "type": "address", "internalType": "address" }
+    ]
+  },
+  { "type": "error", "name": "Spoke__AddressIsZero", "inputs": [] },
+  {
+    "type": "error",
+    "name": "Spoke__CallExecuteFailed",
+    "inputs": [
+      { "name": "message", "type": "bytes", "internalType": "bytes" }
+    ]
+  },
+  { "type": "error", "name": "Spoke__InsufficientBalance", "inputs": [] },
+  {
+    "type": "error",
+    "name": "Spoke__InvalidStatus",
+    "inputs": [
+      { "name": "status", "type": "uint256", "internalType": "uint256" }
+    ]
+  },
+  { "type": "error", "name": "Spoke__NotWhitelisted", "inputs": [] },
+  {
+    "type": "error",
+    "name": "Spoke__NotWhitelistedChainAndContract",
+    "inputs": []
+  },
+  { "type": "error", "name": "Spoke__OnlyOwner", "inputs": [] },
+  {
+    "type": "error",
+    "name": "Spoke__StoredTransactionDetailsLengthIsZero",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Spoke__StoredTransactionSettlementLengthIsZero",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Spoke__TransferEthBalanceFailed",
+    "inputs": []
+  },
+  { "type": "error", "name": "UnsupportedFeeTokenType", "inputs": [] }
+]
