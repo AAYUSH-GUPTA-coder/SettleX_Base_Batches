@@ -101,7 +101,7 @@ forge install
 For frontend:
 ```bash
 cd ../FrontEnd
-bun install
+yarn
 ```
 
 **3. Compile contracts**
@@ -116,9 +116,9 @@ Use Foundry scripts to deploy Hub and Spoke contracts:
 forge script script/Spoke/Base/Setter/Deploy/DeploySpokeBase.s.sol:DeploySpokeBase --account defaultKey --sender $WALLET_ADDRESS --rpc-url $BASE_SEPOLIA_RPC_URL --broadcast -vvv
 ```
 
-5. Run the frontend
+**5. Run the frontend**
 ```bash
-bun run dev
+yarn dev
 ```
 
 ---
