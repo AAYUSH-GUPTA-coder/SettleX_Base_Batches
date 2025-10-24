@@ -52,37 +52,37 @@ This validates SettleX’s netting algorithm and showcases the efficiency of set
 ---
 ## ⚙️ Tech Stack
 
-Smart Contracts: Solidity (Foundry)
+**Smart Contracts:** Solidity (Foundry)
 
-Frontend: Next.js (TypeScript)
+**Frontend:** Next.js (TypeScript)
 
-Messaging/Interoperability: Concero
+**Messaging/Interoperability:** Concero
 
-Libraries: OpenZeppelin Contracts
+**Libraries:** OpenZeppelin Contracts
 
 ---
 
 ## 🧠 Core Components
 
-Hub Contract: Maintains global netting state and settlement logic across connected chains.
+**Hub Contract:** Maintains global netting state and settlement logic across connected chains.
 
-Spoke Contract: Deployed on each chain to aggregate obligations before netting via Hub.
+**Spoke Contract:** Deployed on each chain to aggregate obligations before netting via Hub.
 
-Stablecoin Contract (Mock): Used for testnet simulations and settlement examples.
+**Stablecoin Contract:** Used for testnet simulations and settlement examples.
 
-TokenPool Contract: Manages liquidity and ensures delta settlements are bridged efficiently.
+**TokenPool Contract:** Manages liquidity and ensures delta settlements are bridged efficiently.
 
 ---
 
 ## 📖 Contract Addresses
 
-Hub Contract: [0x7D9f7b6dAA5407bFd4A935aae48c64aa0FE69bcb](https://sepolia.arbiscan.io/address/0x7D9f7b6dAA5407bFd4A935aae48c64aa0FE69bcb)
+**Hub Contract:** [0x7D9f7b6dAA5407bFd4A935aae48c64aa0FE69bcb](https://sepolia.arbiscan.io/address/0x7D9f7b6dAA5407bFd4A935aae48c64aa0FE69bcb)
 
-Spoke Contract: [0x91e2E34718EFD173389c7876BBBb57594cE27e37](https://sepolia.basescan.org/address/0x91e2E34718EFD173389c7876BBBb57594cE27e37)
+**Spoke Contract:** [0x91e2E34718EFD173389c7876BBBb57594cE27e37](https://sepolia.basescan.org/address/0x91e2E34718EFD173389c7876BBBb57594cE27e37)
 
-TokenPool Contract: [0x45Ead4ED7Ae622a6B99A124b85d93c496B1CbAa8](https://sepolia.basescan.org/address/0x45Ead4ED7Ae622a6B99A124b85d93c496B1CbAa8)
+**TokenPool Contract:** [0x45Ead4ED7Ae622a6B99A124b85d93c496B1CbAa8](https://sepolia.basescan.org/address/0x45Ead4ED7Ae622a6B99A124b85d93c496B1CbAa8)
 
-Stablecoin Contract: [0x0b8C9Cf4F43811D9A22Be732AbE81617D4BD4183](https://sepolia.basescan.org/address/0x0b8C9Cf4F43811D9A22Be732AbE81617D4BD4183)
+**Stablecoin Contract:** [0x0b8C9Cf4F43811D9A22Be732AbE81617D4BD4183](https://sepolia.basescan.org/address/0x0b8C9Cf4F43811D9A22Be732AbE81617D4BD4183)
 
 ---
 
@@ -125,7 +125,7 @@ bun run dev
 
 ## 🧾 Example Workflow
 
-1. User submits cross-chain transfers (e.g., Base → Fuji).
+1. User submits cross-chain transfers.
 2. SettleX aggregates and nets obligations using the Hub and Spoke contracts.
 3. Only the net delta is bridged, significantly reducing gas and transfer volume.
 4. Settlement confirmations are displayed in the frontend dashboard.
